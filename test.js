@@ -6,7 +6,7 @@ var Segment = require('./lib/Segment').Segment;
 var POSTAG = require('./lib/POSTAG'); 
 var fs = require('fs');
 
-var NUM = 1;
+var NUM = 1000;
 var text = '\
 随着智能化住宅小区的普及和宽带接入技术的发展，各种基于宽带技术的应用服务也日益被人们所熟悉。\
 ';
@@ -53,7 +53,9 @@ var text = '\
 //text = '看你要用到什么场景撒。';
 //text = '阿西啊，好吧，基本懂了';
 //text = '我觉得如果没有涉及到IO操作，没必要全按回调方式来写';
-text = '一加一等于２ａｂｃＡＢＣ';
+//text = '一加一等于２ａｂｃＡＢＣ';
+//text = '小明和小白坐在石头上。';
+text = '这个网址http://segment.net/》欢迎测试';
 
 /*
 var Wildcard = require('./lib/Wildcard');

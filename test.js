@@ -2,14 +2,17 @@
  * 测试
  */
  
-var Segment = require('./lib/Segment').Segment;
-var POSTAG = require('./lib/POSTAG'); 
+var Segment = require('./index').Segment;
+var POSTAG = require('./index').POSTAG; 
 var fs = require('fs');
 
-var NUM = 1000;
+var NUM = 1;
 var text = '\
 随着智能化住宅小区的普及和宽带接入技术的发展，各种基于宽带技术的应用服务也日益被人们所熟悉。\
 ';
+//text = '是的.大家以后说话都要注意一点..他喜欢咬人...';
+//text = '敲诈他就等于敲诈我自己';
+//text = '他就等于';
 //text = '被人们所熟悉。';
 //text = '李小明智能化住宅AK';
 //text = '但91%的企业表示其技术工人的技术能力不能完全胜任企业引进高新技术或进行技术改造的任务';
@@ -25,7 +28,7 @@ var text = '\
 //text = '长春市长春药店';
 //text = 'AK47-ISO-9001吖体系认证';
 //text = '工信处女干事每月经过下属科室都要亲口交代24口交换机等技术性器件的安装工作。';
-//text = '工信处女干事';
+//text = '每月经过';
 //text = '24口交换机';
 //text = '这是一个伸手不见五指的黑夜。我叫孙悟空，我爱北京，我爱Python和C++。';
 //text = '我不喜欢日本和服。';
@@ -49,34 +52,25 @@ var text = '\
 //text = '关电脑，关计算机，关机';
 //text = '老雷对老狗说：您要淡定';
 //text = '你是李家的人？';
-//text = '阿民歙不是谁？a23';
 //text = '看你要用到什么场景撒。';
 //text = '阿西啊，好吧，基本懂了';
 //text = '我觉得如果没有涉及到IO操作，没必要全按回调方式来写';
-//text = '一加一等于２ａｂｃＡＢＣ';
+//text = '一加一等于２ａｂｃＡＢＣ砼';
 //text = '小明和小白坐在石头上。';
-text = '这个网址http://segment.net/》欢迎测试';
+//text = '哈哈http://segment.cnodejs.net/欢迎测试http://www.baidu.com/';
+//text = 'http://www.hylanda.com/post.php?mid=4&aid=15';
+//text = '谢娜喜欢上http://baidu.com搜索东西';
+//text = '这项调查对设计基于分词技术的新一代中文搜索引擎将是一个颇具价值的基础性工作。作者简介孙茂松清华大学计算机科学与技术系副主任，研究领域为中文信息处理和人工智能。主持多项国家重点基础研究发展规划项目二级课题、国家自然科学基金项目';
+//text = '交谈中请勿轻信汇款、中奖信息、陌生电话，勿使用外挂软件。';
+//text = '老雷最近一直研究这个做啥呢';
+text = '这是一个基于Node.js的中文分词模块。';
 
-/*
-var Wildcard = require('./lib/Wildcard');
-var w = new Wildcard();
-w.load('./dicts/Wildcard.txt');
-console.log(w.match(text));
-//return;
-*/
-var segment = new Segment({
-	dict:		'./dicts/Dict.txt',
-	stopword:	'./dicts/Stopword.txt',
-	chsname: [
-		'./dicts/ChsSingleName.txt',
-		'./dicts/ChsDoubleName1.txt',
-		'./dicts/ChsDoubleName2.txt',
-		'./dicts/ChsCommonName.txt'
-	],
-	commonname: ['./dicts/Wildcard.txt']
-});
-
-
+var s = new Date().getTime();
+var segment = new Segment();
+// 使用默认的识别模块及字典
+segment.useDefault();
+var e = new Date().getTime();
+console.log('init segment spent ' + ((e - s) / NUM) + 'ms');
 
 
 var s = new Date().getTime();

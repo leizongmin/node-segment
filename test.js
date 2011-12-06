@@ -75,7 +75,9 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '2011年度';
 //text = '一百步伐木法';
 //text = '二百厘米，五万万人民';
-text = '我的邮箱地址是leizongmin@gmail.com，mail-me@mail.ucdok.com';
+//text = '我的邮箱地址是leizongmin@gmail.com，mail-me@mail.ucdok.com';
+text = 'PI=3.141592654.哈哈';
+text = '我的QQ刚刚被挤下去了';
 
 var s = new Date().getTime();
 var segment = new Segment();

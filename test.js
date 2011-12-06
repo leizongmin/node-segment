@@ -75,9 +75,13 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '2011年度';
 //text = '一百步伐木法';
 //text = '二百厘米，五万万人民';
-//text = '我的邮箱地址是leizongmin@gmail.com，mail-me@mail.ucdok.com';
-text = 'PI=3.141592654.哈哈';
-text = '我的QQ刚刚被挤下去了';
+text = '我的邮箱地址是leizongmin@gmail.com，mail-me@mail.ucdok.com';
+//text = 'PI=3.141592654.哈哈';
+//text = '我的QQ刚刚被挤下去了';
+//text = '那些词恐怕谁也不知道，这个算不算很高深？到底有没有？';
+//text = '@健康是唯一：【冬天喝茶有忌讳】茶水虽好，但在冬季，由于温度和湿度的大幅度变化，因而还是有一些人群是不适宜喝茶的。1：孕妇不宜喝茶2：经期不要喝茶3：老人冬季少喝茶4：喝茶就喝红茶+枣5：不要空腹饮茶6：不要喝烫茶7：不要喝浓茶~~（珍爱健康，请关注@健康是唯一）';
+//text = '这是谁家小孩';
+text = '你知道不知道';
 
 var s = new Date().getTime();
 var segment = new Segment();

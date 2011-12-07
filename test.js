@@ -83,6 +83,8 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '这是谁家小孩';
 //text = '安以轩是谁？你知道不知道。广东省广州市海珠区';
 //text = '童安格(Augus Tung),集作曲、作词、演唱于一身,是典型的浪漫主义爱情故事的发言人。他1996年参加中央电视台春节联欢晚会,演唱歌曲《畅饮回忆》,是国内较早深受欢迎的';
+//text = '不可以啊';
+text = '分词正确率高达97.58%(即百分之九十七点五八，973专家评测结果)';
 
 var s = new Date().getTime();
 var segment = new Segment();

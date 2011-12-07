@@ -88,7 +88,7 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '十五分之一是多少？零点零六六七分之九.5';
 //text = '她十二岁时是班花';
 //text = '化妆和服装';
-text = '“王军虎”还能不能算词?';
+text = '“王军虎”还能不能算词?真是个大难题。';
 
 var s = new Date().getTime();
 var segment = new Segment();

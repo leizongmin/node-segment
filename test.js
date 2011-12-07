@@ -86,6 +86,9 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '不可以啊';
 //text = '分词正确率高达97.58%(即百分之九十七点五八，973专家评测结果)';
 //text = '十五分之一是多少？零点零六六七分之九.5';
+//text = '她十二岁时是班花';
+//text = '化妆和服装';
+text = '“王军虎”还能不能算词?';
 
 var s = new Date().getTime();
 var segment = new Segment();

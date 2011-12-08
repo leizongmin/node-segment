@@ -89,6 +89,7 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '她十二岁时是班花';
 //text = '化妆和服装';
 text = '“王军虎”还能不能算词?真是个大难题。';
+text = '研究生命起源，此文章作者是微软系的，所以系统内应该早就装上了';
 
 var s = new Date().getTime();
 var segment = new Segment();

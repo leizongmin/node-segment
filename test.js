@@ -107,7 +107,8 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '复方分词法产品名';
 //text = '省略语等都是很难处理的问题';
 //text = '到底哪种分词算法的准确度更高';
-//text = '中药中的复方概念';
+//text = '相当于用中药中的复方概念';
+text = '用不同的药材综合起来去医治疾病';
 
 var s = new Date().getTime();
 var segment = new Segment();

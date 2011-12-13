@@ -112,11 +112,13 @@ text = fs.readFileSync('./old/text1.txt', 'utf8');
 //text = '各位大牛如果发现已有的东西';//，千万要告知我啊。';
 //text = '没办法';
 //text = '10个100%纯度的';
+text = '中国，是一个 多民族的国家。';
 
 var s = new Date().getTime();
 var segment = new Segment();
 // 使用默认的识别模块及字典
-segment.useDefault();
+//segment.useDefault();
+segment.use(['PunctuationTokenizer', 'SingleTokenizer']);
 var e = new Date().getTime();
 console.log('init segment spent ' + ((e - s) / NUM) + 'ms');
 
@@ -137,3 +139,8 @@ for (var i in ret) {
 console.log(ret);
 console.log(line);
 console.log('spent ' + ((e - s) / NUM) + 'ms');
+console.log(segment.toString(ret));
+var split = segment.split(ret, '是');
+for (var i in split)
+	console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, '的', 3));

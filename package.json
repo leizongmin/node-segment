@@ -1,4 +1,27 @@
 {
-	"name":		"segment",
-	"main":		"index.js"
+  "name":           "segment",
+  "main":           "./index.js",
+  "version":        "0.0.2",
+  "description":    "A Chinese word segmentation. 中文分词模块。",
+  "keywords":       ["segment","Chinese","中文分词"],
+  "author":         "Lei Zongmin <leizongmin@gmail.com>",
+  "contributors": [
+    {"name": "Lei Zongmin", "email": "leizongmin@gmail.com"}
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leizongmin/node-segment.git"
+  },
+  "engines": {
+    "node":         ">= 0.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "should":       "*",
+    "mocha":        ">= 1.2",
+    "uglify-js":    ">= 1.3.3"
+  },
+  "scripts": {
+    "test":         "mocha -t 5000"
+  }
 }

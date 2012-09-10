@@ -1,8 +1,9 @@
+'use strict';
+
 /**
  * 中文分词器
  *
  * @author 老雷<leizongmin@gmail.com>
- * @version 0.1
  */
  
 // 分词接口 
@@ -11,6 +12,8 @@ exports.Segment = require('./lib/Segment');
 // 词性接口
 exports.POSTAG = require('./lib/POSTAG');
 
+// 版本
+exports.version = require('./package.json').version;
 
 /*
 使用示例：

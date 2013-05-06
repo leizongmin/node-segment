@@ -119,7 +119,7 @@ var s = new Date().getTime();
 var segment = new Segment();
 // 使用默认的识别模块及字典
 segment.useDefault();
-segment.loadDict(__dirname + '/a1.txt');
+//segment.loadDict(__dirname + '/a1.txt');
 console.log(Object.keys(segment.DICT.TABLE).length);
 //segment.use(['URLTokenizer', 'PunctuationTokenizer', 'ForeignTokenizer', 'SingleTokenizer', 'EmailOptimizer']);
 var e = new Date().getTime();

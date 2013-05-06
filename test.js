@@ -113,12 +113,14 @@ text = '各位大牛如果发现已有的东西';//，千万要告知我啊。';
 text = '没办法';
 text = '10个100%纯度的';
 text = '中国，是一个 多民族的国家。leizongmin@qq.com http://baidu.com哈哈';
-text = '打开{http://site.com}网站';
+//text = '打开{http://site.com}网站';
 
 var s = new Date().getTime();
 var segment = new Segment();
 // 使用默认的识别模块及字典
 segment.useDefault();
+segment.loadDict(__dirname + '/a1.txt');
+console.log(Object.keys(segment.DICT.TABLE).length);
 //segment.use(['URLTokenizer', 'PunctuationTokenizer', 'ForeignTokenizer', 'SingleTokenizer', 'EmailOptimizer']);
 var e = new Date().getTime();
 console.log('init segment spent ' + ((e - s) / NUM) + 'ms');

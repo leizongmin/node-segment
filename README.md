@@ -1,4 +1,5 @@
-# 中文分词模块
+中文分词模块
+==============
 
 本模块以**[盘古分词组件](http://pangusegment.codeplex.com/)**中的词库为基础，
 算法设计也部分参考了盘古分词组件中的算法。
@@ -10,7 +11,7 @@
 
 ```javascript
 // 载入模块
-var Segment = require('node-segment').Segment;
+var Segment = require('segment').Segment;
 // 创建实例
 var segment = new Segment();
 // 使用默认的识别模块及字典，载入字典文件需要1秒，仅初始化时执行一次即可
@@ -25,7 +26,7 @@ console.log(segment.doSegment('这是一个基于Node.js的中文分词模块。
 
 ```javascript
 // 载入模块
-var Segment = require('node-segment').Segment;
+var Segment = require('segment').Segment;
 // 创建实例
 var segment = new Segment();
 // 配置，可根据实际情况增删，详见segment.useDefault()方法
@@ -35,6 +36,12 @@ segment.loadDict('dict.txt'); // 载入字典，详见dicts目录，或者是自
 // 开始分词
 console.log(segment.doSegment('这是一个基于Node.js的中文分词模块。'));
 ```
+
+注意
+=========
+
+**请勿用此模块来对较长且无任何标点符号的文本进行分词，否则会导致分词时间成倍增加。**
+
 
 授权
 ===============

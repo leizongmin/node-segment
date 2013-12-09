@@ -65,6 +65,8 @@ describe('ChsNameTokenizer', function () {
           ['分词', '正确率', '高达', '97.58%', '(', '即', '百分之九十七点五八', '，', '973', '专家', '评测', '结果', ')']);
     equal('邮箱mail-me@mail.ucdok.com',
           ['邮箱', 'mail-me@mail.ucdok.com']);
+    equal('邮箱@mail.ucdok.com',
+          ['邮箱', '@', 'mail.ucdok.com']);
     equal('我的邮箱是leizongmin@gmail.com，mail-me@mail.ucdok.com',
           ['我', '的', '邮箱', '是', 'leizongmin@gmail.com', '，', 'mail-me@mail.ucdok.com']);
     equal('欢迎访问我的个人主页http://ucdok.com娃哈哈',

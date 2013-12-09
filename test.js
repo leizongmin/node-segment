@@ -115,7 +115,7 @@ text = '10个100%纯度的';
 text = '中国，是一个 多民族的国家。leizongmin@qq.com http://baidu.com哈哈';
 //text = '打开{http://site.com}网站';
 text = '「美图区」';
-text = '我正在参加抽奖活动：#2013易迅送你快乐到家#，奖品丰厚，你也赶快来参加吧！活动地址：http://url.cn/Ds2hyz@wzgdmje';
+text = '我正在参加抽奖活动：#2013易迅送你快乐到家#，奖品丰厚，你也赶快来参加吧！活动地址：http://url.cn/Ds2hyz @wzgdmje';
 
 var s = new Date().getTime();
 var segment = new Segment();

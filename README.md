@@ -7,7 +7,22 @@
 
 在线演示地址：<http://segment.ucdok.com/>
 
+本分词模块具有以下特点：
+
++ 纯JavaScript编写，可以在任何支持ECMAScript5的引擎上执行（需要稍微修改部分代码）
++ 基于词性进行联想识别
++ 可使用JavaScript编写自定义的分词模块
+
+
 ## 1、使用方法
+
+安装：
+
+```bash
+$ npm install segment --save
+```
+
+使用：
 
 ```javascript
 // 载入模块

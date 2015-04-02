@@ -5,9 +5,11 @@
  *
  * @author 老雷<leizongmin@gmail.com>
  */
- 
-// 分词接口 
-exports.Segment = require('./lib/Segment');
+
+// 分词接口
+var Segment = require('./lib/Segment');
+module.exports = exports = Segment;
+exports.Segment = Segment;
 
 // 词性接口
 exports.POSTAG = require('./lib/POSTAG');

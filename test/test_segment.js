@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Segment = require('../').Segment;
+var Segment = require('../');
 
 describe('ChsNameTokenizer', function () {
 

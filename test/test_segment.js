@@ -95,4 +95,24 @@ describe('ChsNameTokenizer', function () {
     equal('一 一', ['一', '一']);
   });
 
+  it('options: simple=true', function () {
+    assert.equal(segment.doSegment('永和服装饰品有限公司', {simple: true}).join('\t'),
+      ['永和', '服装', '饰品有限公司'].join('\t'));
+  });
+
+  it('options: stripPunctuation=true', function () {
+    assert.equal(segment.doSegment('王五和张三丰、李强是谁', {simple: true, stripPunctuation: true}).join('\t'),
+      ['王五', '和', '张三丰', '李强', '是谁'].join('\t'));
+  });
+
+  it('options: convertSynonym=true', function () {
+    assert.equal(segment.doSegment('入睡', {simple: true, convertSynonym: true}).join('\t'),
+      ['入眠'].join('\t'));
+  });
+
+  it('options: stripStopword=true', function () {
+    assert.equal(segment.doSegment('因为李三买了一张三角桌子', {simple: true, stripStopword: true}).join('\t'),
+      ['李三', '买', '一张', '三角', '桌子'].join('\t'));
+  });
+
 });

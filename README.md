@@ -102,10 +102,10 @@ segment.loadSynonymDict('synonym.txt');
 
 ```
 什么时候,何时
-入睡,入眠
+入眠,入睡
 ```
 
-在分词时设置`convertSynonym=true`则结果中的`"什么时候"`将被转换为`"何时"`，`"入睡"`将被转换为`"入眠"`：
+在分词时设置`convertSynonym=true`则结果中的`"什么时候"`将被转换为`"何时"`，`"入眠"`将被转换为`"入睡"`：
 
 ```javascript
 var text = '什么时候我也开始夜夜无法入睡';
@@ -124,7 +124,7 @@ console.log(result);
   { w: '开始', p: 4096 },
   { w: '夜夜', p: 131072 },
   { w: '无法', p: 134217728 },
-  { w: '入眠', p: 4096 } ]
+  { w: '入睡', p: 4096 } ]
 ```
 
 ### 去除停止符
@@ -142,7 +142,7 @@ segment.loadStopwordDict('stopword.txt');
 因为
 ```
 
-在分词时设置`stripStopword=true`则结果中的`"之所以"`和`"因为"`，`"入睡"`将被去除：
+在分词时设置`stripStopword=true`则结果中的`"之所以"`和`"因为"`将被去除：
 
 ```javascript
 var text = '之所以要编写一个纯JS的分词器是因为当时没有一个简单易用的Node.js模块';

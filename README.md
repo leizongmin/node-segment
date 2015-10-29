@@ -92,6 +92,20 @@ console.log(result);
 
 ### 转换同义词
 
+载入同义词词典：
+
+```javascript
+segment.loadSynonymDict('synonym.txt');
+```
+
+词典格式：
+
+```
+什么时候,何时
+```
+
+在分词时设置`convertSynonym=true`则结果中的`"什么时候"`将被转换为`"何时"`
+
 ```javascript
 var text = '什么时候我也开始夜夜无法入睡';
 var result = segment.doSegment(text, {

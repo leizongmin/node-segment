@@ -90,6 +90,28 @@ console.log(result);
   { w: '模块', p: 1048576 } ]
 ```
 
+### 转换同义词
+
+```javascript
+var text = '什么时候我也开始夜夜无法入睡';
+var result = segment.doSegment(text, {
+  convertSynonym: true
+});
+console.log(result);
+```
+
+结果：
+
+```javascript
+[ { w: '何时', p: 0 },
+  { w: '我', p: 65536 },
+  { w: '也', p: 134217728 },
+  { w: '开始', p: 4096 },
+  { w: '夜夜', p: 131072 },
+  { w: '无法', p: 134217728 },
+  { w: '入眠', p: 4096 } ]
+```
+
 
 ## 2、词典格式
 

@@ -3,15 +3,14 @@
 var fs = require('fs');
 var path = require('path');
 var repl = require('repl');
-var Segment = require('./');
 
 
 var r = repl.start('> ');
 var c = r.context;
 
 c._load = function () {
-  c.Segment = Segment;
-  var segment = new Segment();
+  c.Segment = require('./');
+  var segment = new c.Segment();
   segment.useDefault();
   c.segment = segment;
   c.s = function () {
@@ -28,7 +27,7 @@ c.reload = function () {
   var dir = path.resolve(__dirname) + path.sep;
   for (var i in require.cache) {
     if (i.indexOf(dir) === 0) {
-      delete require.cache;
+      delete require.cache[i];
       // console.log('delete %s', i);
     }
   }

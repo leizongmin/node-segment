@@ -67,7 +67,7 @@ console.log(result);
 [ '这是', '一个', '基于', 'Node.js', '的', '中文', '分词', '模块', '。' ]
 ```
 
-### 去掉标点符号
+### 去除标点符号
 
 ```javascript
 var text = '这是一个基于Node.js的中文分词模块。';
@@ -102,9 +102,10 @@ segment.loadSynonymDict('synonym.txt');
 
 ```
 什么时候,何时
+入睡,入眠
 ```
 
-在分词时设置`convertSynonym=true`则结果中的`"什么时候"`将被转换为`"何时"`
+在分词时设置`convertSynonym=true`则结果中的`"什么时候"`将被转换为`"何时"`，`"入睡"`将被转换为`"入眠"`：
 
 ```javascript
 var text = '什么时候我也开始夜夜无法入睡';
@@ -124,6 +125,47 @@ console.log(result);
   { w: '夜夜', p: 131072 },
   { w: '无法', p: 134217728 },
   { w: '入眠', p: 4096 } ]
+```
+
+### 去除停止符
+
+载入词典：
+
+```javascript
+segment.loadStopwordDict('stopword.txt');
+```
+
+词典格式：
+
+```
+之所以
+因为
+```
+
+在分词时设置`stripStopword=true`则结果中的`"之所以"`和`"因为"`，`"入睡"`将被去除：
+
+```javascript
+var text = '之所以要编写一个纯JS的分词器是因为当时没有一个简单易用的Node.js模块';
+var result = segment.doSegment(text, {
+  stripStopword: true
+});
+console.log(result);
+```
+
+结果：
+
+```javascript
+[ { w: '编写', p: 4096 },
+  { w: '纯', p: 1073741824 },
+  { w: 'JS', p: [ 16 ] },
+  { w: '分词', p: 4096 },
+  { w: '器' },
+  { w: '当时', p: 16384 },
+  { w: '没有', p: 4096 },
+  { w: '简单', p: 1073741824 },
+  { w: '易用' },
+  { w: 'Node.js', p: 8 },
+  { w: '模块', p: 1048576 } ]
 ```
 
 
@@ -178,6 +220,8 @@ segment
   .loadDict('dict2.txt')          // 扩展词典（用于调整原盘古词典）
   .loadDict('names.txt')          // 常见名词、人名
   .loadDict('wildcard.txt', 'WILDCARD', true)   // 通配符
+  .loadSynonymDict('synonym.txt')   // 同义词
+  .loadStopwordDict('stopword.txt') // 停止符
 ```
 
 自定义分词器：

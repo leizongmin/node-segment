@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var repl = require('repl');
+var Segment = require('./');
+
+
+var r = repl.start('> ');
+var c = r.context;
+
+c._load = function () {
+  c.Segment = Segment;
+  var segment = new Segment();
+  segment.useDefault();
+  c.segment = segment;
+  c.s = function () {
+    return c.segment.doSegment.apply(c.segment, arguments);
+  };
+  c.ss = function () {
+    var list = c.s.apply(null, arguments);
+    return list.map(function (v) { return v.w; }).join('/');
+  };
+};
+
+c.reload = function () {
+  var t = Date.now();
+  var dir = path.resolve(__dirname) + path.sep;
+  for (var i in require.cache) {
+    if (i.indexOf(dir) === 0) {
+      delete require.cache;
+      // console.log('delete %s', i);
+    }
+  }
+  c._load();
+  console.log('OK. (spent %sms)', Date.now() - t);
+}
+
+c._load();

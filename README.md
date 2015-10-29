@@ -22,7 +22,7 @@
 $ npm install segment --save
 ```
 
-使用：
+使用方法：
 
 ```javascript
 // 载入模块
@@ -50,6 +50,22 @@ console.log(segment.doSegment('这是一个基于Node.js的中文分词模块。
   { w: '。', p: 2048 } ]
 ```
 其中 `w` 表示词的内容，`p` 表示词性（具体参考 https://github.com/leizongmin/node-segment/blob/master/lib/POSTAG.js 中的定义）
+
+### 不返回词性
+
+```javascript
+var text = '这是一个基于Node.js的中文分词模块。';
+var result = segment.doSegment(text, {
+  simple: true
+});
+console.log(result);
+```
+
+结果：
+
+```javascript
+[ '这是', '一个', '基于', 'Node.js', '的', '中文', '分词', '模块', '。' ]
+```
 
 
 ## 2、词典格式

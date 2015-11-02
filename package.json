@@ -1,7 +1,7 @@
 {
   "name": "segment",
   "main": "./index.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chinese word segmentation 中文分词模块",
   "keywords": ["segment", "chinese", "中文", "分词"],
   "author": "Zongmin Lei <leizongmin@gmail.com>",

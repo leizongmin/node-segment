@@ -106,8 +106,8 @@ describe('ChsNameTokenizer', function () {
   });
 
   it('options: convertSynonym=true', function () {
-    assert.equal(segment.doSegment('入眠', {simple: true, convertSynonym: true}).join('\t'),
-      ['入眠'].join('\t'));
+    assert.equal(segment.doSegment('何时入睡', {simple: true, convertSynonym: true}).join('\t'),
+      ['什么时候', '入眠'].join('\t'));
   });
 
   it('options: stripStopword=true', function () {

@@ -1,5 +1,7 @@
 # 中文分词模块 [![Build Status](https://secure.travis-ci.org/leizongmin/node-segment.png?branch=master)](http://travis-ci.org/leizongmin/node-segment) [![Dependencies Status](https://david-dm.org/leizongmin/node-segment.png)](http://david-dm.org/leizongmin/node-segment)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/leizongmin/node-segment.svg)](https://greenkeeper.io/)
+
 ![node-segment](https://nodei.co/npm/node-segment.png?downloads=true&stars=true)
 
 本模块以**[盘古分词组件](http://pangusegment.codeplex.com/)**中的词库为基础，

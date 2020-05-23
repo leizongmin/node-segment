@@ -19,7 +19,7 @@
   "dependencies": {},
   "devDependencies": {
     "should": "*",
-    "mocha": ">= 1.2"
+    "mocha": ">=7.2.0"
   },
   "scripts": {
     "test": "mocha -t 5000"
